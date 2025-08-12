@@ -31,3 +31,17 @@ pipeline:
                     isAutoRejectEnabled: false
                     approverInputs: []
         tags: {}
+  notificationRules:
+    - name: slackTest
+      identifier: slackTest
+      pipelineEvents:
+        - type: AllEvents
+      notificationMethod:
+        type: Slack
+        spec:
+          userGroups: []
+          webhookUrl: https://hooks.slack.com/services/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
+      template:
+        versionLabel: "1"
+        templateRef: slackTemplate
+      enabled: true
